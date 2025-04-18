@@ -5,13 +5,24 @@ export class ConditionalRenderingClass extends Component {
       super(props)
     
       this.state = {
-         isLoaded: false
+         isLoaded: true,
+         isLoggedIn:true,
       }
     }
   render() {
     return (
       <div>
         <h1>{this.state.isLoaded ? 'Data Loaded!' : 'Loading...'}</h1>
+        {this.state.isLoggedIn ? (
+            <div>
+                <p>Welcome to the site! Plase complete the steps below:</p>
+                <ol>
+                    <li>Confirm Email</li>
+                    <li>Complete Profile</li>
+                    <li>Subscribe to the newsletter</li>
+                </ol>
+            </div>
+        ) : (<p>Please sign in</p>) }
       </div>
     )
   }
